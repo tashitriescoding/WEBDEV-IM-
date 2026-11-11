@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawsikat Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-top-actions">
+    <nav class="admin-inline-nav" aria-label="Admin primary navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="manage-services.html">Services</a>
+      <a href="payments.html">Payments</a>
+    </nav>
+    <a href="../index.html" class="public-exit-btn">Public Site</a>
+    <button type="button" class="logout-btn" onclick="localStorage.removeItem('pawsikat_admin_logged_in'); window.location.href='login.html';">Log out</button>
+  </div>
+
+  <div class="admin-screenshot-wrap" aria-label="Pawsikat admin dashboard reference">
+    <img src="../pdf_pages/page_10.png" alt="Pawsikat admin dashboard page" />
+  </div>
+
+  <script>
+    const isLoggedIn = localStorage.getItem('pawsikat_admin_logged_in') === 'true';
+    if (!isLoggedIn) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
